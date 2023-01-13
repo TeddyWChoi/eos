@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>Echo of Soul - New Server Ragnarok</title>
+		<meta name="viewport" content="width=device-width">
+		<meta name="robots" content="index,follow" />
+
+		<meta name="description" content="Echo of Soul Grand Launch">
+		<meta name="keywords" content="Echo of Soul, pre-register">
+    <meta name="google-site-verification" content="R9JLwDrytF9l4gr47rXUjGH2-J9v7ufc7RfKvmqBvGY" />
+		
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Echo of Soul">
+		<meta property="og:url" content="https://www.papayaplay.com">
+		<meta property="og:description" content="">
+		<meta property="og:image" content="https://static.papayaplay.com/static/assets/images/portal/common/papaya-logo.svg">
+		<meta property="fb:app_id" content="601567683367843">
+
+		<link rel="shortcut icon" href="https://static.papayaplay.com/static/assets/images/portal/common/favicon.png">
+		
+		<!-- style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://static.papayaplay.com/static/assets/styles/common.css?2018">
+    <link rel="stylesheet" href="https://static.papayaplay.com/static/assets/styles/toastr.css">
+			
+		<!-- link scripts --> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!-- tweenMax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <!-- scroll magic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+    <!-- toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/css/jquery.fancybox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+    
+  </head>
+  <body id="echo-of-soul">
+
+    <link rel="stylesheet" href="eos_landing.css">
+
+    <div id="eos-pre-register">
+   
+
+      <section id="pr-section-1">
+        <img class="char-01-img" id="sec-2-sub-char" src="./img/img_character_left.png"/>
+        <img class="char-02-img " id="sec-3-sub-char" src="./img/img_character_right.png"/>
+        <div id="sec-01-video-wrapper">
+          <video id="sec-01-video" playsinline="" autoplay="" muted="" loop="" poster="./img/bg_eos_dummy.jpg">
+            <source src="top.mp4" type="video/mp4">
+          </video>
+          <div id="overwrap-cover" :style="{ 'background-image': 'url(' + imgUrl + '/bg_video_dark.png)' }"></div>
+        </div>
+        <div class="top_logo_wrapper">
+          <div class="left_logo_wrapper">
+            <img class="logo--img" :src="imgUrl + '/eos_logo_sm.png'" />
+          </div>
+          <p class="page_des">Live Your New Adventure on Fresh Server</p>
+          <a class="new_server_events" href="#">
+            <p>New Server Events</p>
+          </a>
+          <a class="skip" href="#">
+            <p>Skip for Today</p>
+          </a>
+          <a class="home" href="#">
+              <img src="./img/ico_home.png"/>
+          </a>
+          <a id="eos-hd-menu-btn-download" href="https://eos.papayaplay.com/eos.do?tp=download" class="menu-download-btn eos-hd-menu"><img src="./img/btn_download.png" alt="eos download button" class="download-btn-image"></a>
+        </div>
+
+        <div class="main-content-container">
+          <img class="main-logo" src="./img/img_logo_subtitle.png">
+        </div>
+        <div class="footer-wrapper sub-section-3-2">
+            <div class="footer--line"></div>
+            <div class="footer-left">
+              <a class="left_logo_wrapper" href="http://www.papayaplay.com" target="_blank">
+                <img :src="imgUrl+'/logo_papaya.png'" class="company--logo1"/>
+              </a>
+              <a class="right_logo_wrapper" href="http://bluepotion.co.kr/?lang=en" target="_blank">
+                <img :src="imgUrl+'/logo_bluepotion.png'" class="company--logo2"/>
+              </a>
+            </div>
+            <div class="footer-middle">
+              <span class="copyright">© 2023 Vertigo Games International Pte. Ltd.</span>
+              <span class="copyright">&nbsp;All Rights Reserved</span>
+            </div>
+            <div class="footer-right">
+              <span><a :href="linkTerms" class="policy" taret="_blank">TERMS OF SERVICE&nbsp;&nbsp;|</a></span>
+              <span><a :href="linkPolicy" class="policy" taret="_blank">&nbsp;&nbsp;PRIVACY POLICY</a></span>
+            </div>
+          </div>
+      </section>
+      
+    
+
+    <script>
+      toastr.options.closeButton = true;
+      toastr.options.timeOut = 0;
+      toastr.options.closeOnHover = false;
+      toastr.options.extendedTimeOut = 0;
+    </script>
+   
+    <script type="text/javascript">
+      // Vue
+      let lsPreRegister = new Vue({
+        el: '#eos-pre-register',
+        data: function () {
+          return {
+            imgUrl: 'https://static.papayaplay.com/static/assets/images/eos/event/preregister',
+            bgTop: 'https://static.papayaplay.com/static/assets/images/9dragons/event/nd_pre_register/bg1_m.png',
+            inputEmail: '',
+            youtubeLink : 'https://www.youtube.com/watch?v=VuHulKLYAr0',
+            isShowPopup : false,
+            flagAni : false,
+            popup: false,
+            unid: "5037051" || null,
+            userID: "woonggu" || null,
+            isLogin: "0" || null,
+            userPhoto: "PI/9/1/a/woonggu/pi.png" || '',
+            userIP: "209.52.88.44" || null,
+            userPhotoUrl: 'https://blackshotupload.s3.amazonaws.com/',
+            popupMessage: '',
+            baseAid: 1100,
+            isProcessing: false,
+            chkAgree: false,
+            linkFacebook: "https://www.facebook.com/EchoOfSoulPapayaPlay",
+            linkYoutube: "https://www.youtube.com/channel/UC1AgsKjJpSrEf-hZv32M0Yw",
+            linkDiscord: "https://discord.com/invite/echoofsoul",
+            linkPolicy: "https://www.papayaplay.com/portal.do?tp=privacy",
+            linkTerms: "https://www.papayaplay.com/portal.do?tp=terms",
+            linkSupport: "https://vertigogamesaid.freshdesk.com/support/home",
+          }
+        },
+        methods: {
+          startAnimation: function () {
+            let wWidth = $(window).width();
+            //console.log(wWidth);
+            let mainAnimation = new TimelineMax();
+
+            // let effect1 = mainAnimation.fromTo(
+            //   ".explision--img",
+            //   0.4,
+            //   { transform: "scale(0.4)", opacity: 0 },
+            //   { transform: "scale(1.0)", opacity: 1, ease: "Power2.easeIn" },
+            //   0.1
+            // );
+            let effect2 = mainAnimation.fromTo(
+              "#down-scroll",
+              1.3,
+                { opacity: 0 },
+                { opacity: 1, ease: "Power0.easeOut" },
+              0.5
+            );
+            let effect3 = mainAnimation.fromTo(
+              "#goto-pr-now",
+              0.9,
+                { opacity: 0 },
+                { opacity: 1, ease: "Power0.easeOut" },
+              0.5
+            );
+            let effect4 = mainAnimation.fromTo(
+              "#watch-trailer",
+              0.4,
+              { opacity: 0 },
+              { opacity: 1, ease: "Power0.easeOut"},
+              0.5
+            );
+            // let effect5 = mainAnimation.fromTo(
+            //   ".main-logo",
+            //   0.0,
+            //   { opacity: 0 },
+            //   { opacity: 1, ease: "ease-in-out"},
+            //   0.5
+            // );
+          },
+          getParameterByName : function(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            let regex = new RegExp("[#&|\\?&]" + name + "=([^&#]*)");
+            let results = regex.exec(location.href);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+          },
+          getAidByUtmterm : function(name) {
+            vm = this;
+            let subStrUtmSrouce = "";
+            let strUtmSource = vm.getParameterByName(name);
+            if( strUtmSource.length > 3 ) {
+              subStrUtmSrouce = strUtmSource.substr(0,3);
+            }
+            subStrUtmSrouce = subStrUtmSrouce.replace(/[^0-9]/g,''); // get only number in sting
+            let nUtmTerm = parseInt(subStrUtmSrouce, 10);
+            return nUtmTerm;
+          },
+          isEmailValid: function(email) {
+            let vm = this;
+            let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return regex.test(email);
+          },
+          sendToUserMail : function() {
+            var vm = this;
+            var agreeText = document.getElementsByClassName("agree-text");
+
+            toastr.options = {
+              "positionClass":"toast-top-full-width",
+              "timeOut": 0,
+            };
+
+            if( vm.isProcessing === true) {
+              toastr.error("It's running. Please wait...");
+              return;
+            } else {
+              vm.isProcessing = true;
+            }
+
+            if( vm.chkAgree === false ) {
+              agreeText[0].classList.add("style-attention");
+              alert("Please check on the acknowledgement below the submit section.");
+              vm.isProcessing = false;
+              return;
+            }
+
+            // get AID from UTM-SOURCE parameter
+            let targetAid = vm.getAidByUtmterm('utm_source');
+            if( isNaN(targetAid) ) {
+              targetAid = vm.baseAid;
+            } else {
+              targetAid = targetAid+vm.baseAid;
+            }
+
+            if( vm.isEmailValid(vm.inputEmail)) {
+              //console.log("targetAid/e-mail : ", targetAid, "/", vm.inputEmail);
+
+              $.ajax({
+                url: ioRootPath + "/json.do?callback=?",
+                //url: "http://io.papayaplay.net" + "/json.do?callback=?",
+                type: 'POST',
+                data: { 
+                  cm: "Account.Game.PreRegistrationEmail", 
+                  email: vm.inputEmail, 
+                  sid: 11,
+                  aid: targetAid
+                },
+                crossDomain: true,
+                dataType: 'json',
+              })
+                .success(function (res) {
+                  console.log("Result : ", res);
+                  //console.log("ResultCode[0].Description : ", res.ResultCode[0].Description);
+                  if( res.ResultCode[0].Code == "10000" ) {
+                    // toastr.success("Success!<br>Message sent. Please check your email.");
+                    vm.popupMessage = "You have successfully pre-registered to Ragnarok. Please check the confirmation email we just sent.";
+                    vm.isShowPopup = true;
+                  } else if ( res.ResultCode[0].Code == "11000" ) {
+                    // toastr.error("Exception : Email address format is invalid.");
+                    vm.popupMessage = "The email you entered is invalid. <br/>Please verify your email address for the pre-registration.";
+                    vm.isShowPopup = true;
+                    
+                  } else if ( res.ResultCode[0].Code == "11001" ) {
+                    // toastr.error("Exception : Already registered email address.");
+                    vm.popupMessage = "This email is already pre-registered to Ragnarok.";
+                    vm.isShowPopup = true;
+                  }
+                  else if ( res.ResultCode[0].Code == "11002" ) {
+                    vm.popupMessage = "Error (11002)";
+                    vm.isShowPopup = true;
+                  }
+                  vm.isProcessing = false;
+                });
+            } else {
+              console.log("e-mail inValid format!! : ", vm.inputEmail);
+              // toastr.error("Fail!<br> Please check the email address you wrote.");
+              vm.popupMessage = "The email you entered is invalid. <br/>Please verify your email address for the pre-registration.";
+              vm.isShowPopup = true;
+              vm.isProcessing = false;
+            }
+          },
+          toggleEvent: function() {
+            var vm=this;
+            vm.isShowPopup = !vm.isShowPopup;
+          },
+          openEventPopup: function() {
+            var vm=this;
+            vm.isShowPopup = true;
+          },
+          closeEventPopup: function() {
+            var vm=this;
+            vm.isShowPopup = false;
+            // if( $(".popup-reqform").is(event.target) ) {
+            //   vm.toggleEvent();
+            // }
+          },
+          gotoLogin: function() {
+            var vm=this;
+            //window.location.href='https://www.papayaplay.com/account/signin.do?redirect_url=https://www.papayaplay.com/ndevent/event.do';
+            window.location.href='https://www.papayaplay.com/account/signin.do?redirect_url=https://www.papayaplay.com/eosevent/prevent.do';
+          },
+          gotoSignUp: function() {
+            var vm=this;
+
+            // get AID from UTM-SOURCE parameter
+            let targetAid = vm.getAidByUtmterm('utm_source');
+            if( isNaN(targetAid) ) {
+              targetAid = vm.baseAid;
+            } else {
+              targetAid = targetAid+vm.baseAid;
+            }
+
+            window.location.href='https://www.papayaplay.com/account/signup.do?aid='+targetAid;
+          },
+          toggleCheckBox: function() {
+            var vm=this;
+            var agreeText = document.getElementsByClassName("agree-text");
+
+            vm.chkAgree = !vm.chkAgree;
+
+            if(vm.chkAgree === true) {
+              agreeText[0].classList.remove("style-attention");
+            }
+          },
+          gotoFacebook: function() {
+            var vm=this;
+            window.open(vm.linkFacebook);
+          },
+          gotoYoutube: function() {
+            var vm=this;
+            window.open(vm.linkYoutube);
+          },
+          gotoDiscord: function() {
+            var vm=this;
+            window.open(vm.linkDiscord);
+          },
+  		  },
+        mounted: function() {
+          var vm=this;
+
+          document.getElementById('sec-01-video').pause();
+          document.getElementById('sec-01-video').playsinline = true;
+          document.getElementById('sec-01-video').autoplay = true;
+          document.getElementById('sec-01-video').muted = true;
+          document.getElementById('sec-01-video').play();
+
+        },
+        created: function() {
+          var vm=this;
+          window.addEventListener("load", vm.startAnimation);
+          window.addEventListener('keyup', function(evt) {
+            if( evt.keyCode === 27 ) {
+              vm.isShowPopup = false;
+            }
+          });
+
+          
+        },
+        destroyed: function() {
+          var vm=this;
+          window.removeEventListener("load", vm.startAnimation);
+        }
+        
+      })
+      
+      $(document).ready(function() {
+        let moveScroll = false;
+        let moveInterval;
+        let delayCnt = 0;
+        $(window).scroll(function (e) {
+          moveScroll = true;
+        });
+        $(".side-banner-wrapper").mouseover(function (e) {
+          e.preventDefault();
+          $(".side-banner-wrapper").removeClass("hide-banner");
+          $(".side-banner-wrapper").addClass("show-banner");
+          clearInterval(moveInterval);
+          delayCnt = 0;
+        });
+        $(".side-banner-wrapper").mouseout(function (e) {
+          e.preventDefault();
+          moveScroll = false;
+          setIn();
+        });
+        function setIn() {
+          moveInterval = setInterval(function () {
+            if (moveScroll) {
+              $(".side-banner-wrapper").removeClass("hide-banner");
+              $(".side-banner-wrapper").addClass("show-banner");
+              delayCnt = delayCnt + 1;
+              if( delayCnt > 3) {
+                moveScroll = false;
+              }
+            } else {
+              $(".side-banner-wrapper").removeClass("show-banner");
+              $(".side-banner-wrapper").addClass("hide-banner");
+              delayCnt = 0;
+            }
+          }, 1000);
+        }
+        setIn();
+
+        // bootstrap tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // section : Pre-Register (scrollmagic)
+        var controller = new ScrollMagic.Controller();
+        var tl01 = new TimelineMax();
+        var subChar1 = TweenMax.fromTo(
+          "#sec-2-sub-char",
+          0.5,
+          { opacity: 0, left: "-250px", ease: Circ.easeOut },
+          { opacity: 1, left: "0%", ease: Circ.easeIn }
+        );
+        tl01.add([subChar1]);
+
+        var scene = new ScrollMagic.Scene({
+          triggerElement: "#pr-section-1",
+        })
+          .setTween(tl01)
+          .addTo(controller);
+
+        var tl02 = new TimelineMax();
+        var subChar2 = TweenMax.fromTo(
+          "#sec-3-sub-char",
+          0.5,
+          { opacity: 0, right: "-250px", ease: Circ.easeOut },
+          { opacity: 1, right: 0 ,ease: Circ.easeIn }
+        );
+        tl02.add([subChar2]);
+
+        var scene2 = new ScrollMagic.Scene({
+          triggerElement: "#pr-section-1",
+        })
+          .setTween(tl02)
+          .addTo(controller);
+
+        $('.various').fancybox({
+          width: "90%",
+          height: "90%",
+          maxWidth: "1280px",
+          maxHeight: "720px",
+          fitToView	: true,
+          autoScale   :true,
+          autoSize	: true,
+          closeClick	: false,
+          openEffect	: 'none',
+          closeEffect	: 'none'
+        });
+      });
+    </script>
+    
+  </div>
+	</body>
+</html>
