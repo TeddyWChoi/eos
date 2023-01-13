@@ -138,12 +138,12 @@ background-repeat:repeat
     margin-left: 30px;
     font-weight: 500;
     line-height: 24px;
+    margin-right: auto;
 }
 .new_server_events{
     font-size: 18px;
     color:#6D5FCC;
     margin-left:30px;
-    margin-right: auto;
     line-height: 24px;
 }
 .new_server_events:hover{
@@ -194,6 +194,7 @@ filter:hue-rotate(25deg)
 }
 .home{
     margin-right:30px;
+    margin-left:20px;
     transition: all 0.5s ease;
 }
 .home:hover{
