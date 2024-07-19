@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Web 게임시작 테스트</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            var eosGA = {
+                addEvent: function (n, t) {
+                    t.eventAction = t.eventAction || 'click';
+                    $(n).on(t.eventAction, function () {
+                        eosGA.sendEvent(t.eventLabel);
+                    });
+                },
+                sendEvent: function (n) {
+                    var t = $(this),
+                        i = {
+                            event_category: t.data('event-category') || 'user_action',
+                            event_label: n || t.data('event-label'),
+                        };
+                    gtag('event', 'button_click', i);
+                },
+            };
+            var __cookieName = 'weblauncher_prevent_noti',
+                __iframeId = 'ifrmLauncher',
+                __launcherRunable = !0,
+                __launcherDownloadUrl,
+                __locationHostname = window.location.hostname;
+            __launcherDownloadUrl =
+                __locationHostname.indexOf('game.naver.com') > -1
+                    ? __locationHostname.indexOf('qa-') == 0
+                        ? 'http://51.161.109.125/DHO/DHO-Installer.exe'
+                        : 'http://51.161.109.125/DHO/DHO-Installer.exe'
+                    : __locationHostname.indexOf('qa-') == 0
+                    ? 'http://51.161.109.125/DHO/DHO-Installer.exe'
+                    : 'http://51.161.109.125/DHO/DHO-Installer.exe';
+
+            var launchUri = function (n, t, i) {
+                function u(n, t) {
+                    'function' == typeof n && n(t);
+                }
+
+                function c(n) {
+                    n = n || document.body;
+                    var t = document.getElementById(__iframeId);
+                    return (
+                        t && s(n),
+                        (t = document.createElement('iframe')),
+                        (t.id = __iframeId),
+                        (t.src = 'about:blank'),
+                        (t.style.display = 'none'),
+                        n.appendChild(t),
+                        t
+                    );
+                }
+
+                function s(n) {
+                    r && ((n = n || document.body), n.removeChild(r), (r = null));
+                }
+
+                var p = !1,
+                    w = !1,
+                    b = !1,
+                    a = !1,
+                    v = -1,
+                    e,
+                    r,
+                    o,
+                    f,
+                    h,
+                    y,
+                    l,
+                    k;
+                if (n == '') {
+                    alert('게임 실행 데이터가 없습니다.');
+                    return;
+                }
+
+                if (
+                    ((y = navigator.userAgent),
+                    'Microsoft Internet Explorer' == navigator.appName
+                        ? ((l = /MSIE ([0-9]{1,}[.0-9]{0,})/), null != l.exec(y) && (v = parseFloat(RegExp.$1)))
+                        : 'Netscape' == navigator.appName &&
+                          ((l = /Trident\/.*rv:([0-9]{1,}[.0-9]{0,})/),
+                          null != l.exec(y) && (v = parseFloat(RegExp.$1))),
+                    !window.chrome || navigator.userAgent.match(/Opera|OPR\//) || navigator.userAgent.match(/Edge\//)
+                        ? window.chrome && navigator.userAgent.match(/Edge\//)
+                            ? (a = !0)
+                            : 'undefined' != typeof InstallTrigger
+                            ? (w = !0)
+                            : 0 < v && (b = !0)
+                        : (p = !0),
+                    navigator.msLaunchUri && !a)
+                )
+                    navigator.msLaunchUri(n, t, i);
+                else if (p)
+                    (f = function () {
+                        window.clearTimeout(o);
+                        window.removeEventListener('blur', f);
+                        u(t);
+                    }),
+                        (h = function () {
+                            window.removeEventListener('blur', f);
+                            u(i, {
+                                isChrome: !0,
+                            });
+                        }),
+                        window.addEventListener('blur', f),
+                        (o = window.setTimeout(h, 500)),
+                        (window.location.href = n);
+                else if (a)
+                    (f = function () {
+                        window.clearTimeout(o);
+                        window.removeEventListener('blur', f);
+                        u(t);
+                    }),
+                        (h = function () {
+                            window.clearTimeout(o);
+                            window.removeEventListener('blur', f);
+                            u(i);
+                        }),
+                        window.addEventListener('blur', f),
+                        (o = window.setTimeout(h, 500)),
+                        navigator.msLaunchUri(n, t, i);
+                else if (w) {
+                    r = c();
+                    try {
+                        r.contentWindow.location.href = n;
+                        o = window.setTimeout(function () {
+                            window.clearTimeout(o);
+                            r.contentDocument
+                                ? u(t)
+                                : (u(i, {
+                                      delay: 5e3,
+                                  }),
+                                  s());
+                        }, 2e3);
+                    } catch (d) {
+                        console.log(d);
+                        u(i);
+                        s();
+                    }
+                } else
+                    b
+                        ? ((r = c()),
+                          (r.contentWindow.location.href = n),
+                          window.setTimeout(function () {
+                              s(void 0);
+                              u(i);
+                          }, 500))
+                        : ((r = c()),
+                          (r.contentWindow.location.href = n),
+                          window.setTimeout(function () {
+                              s(void 0);
+                              u(i);
+                          }, 500));
+            };
+
+            var startEnable = function (n, t) {
+                var i = t || {};
+                n
+                    ? i.delay
+                        ? window.setTimeout(function () {
+                              __launcherRunable = !0;
+                          }, i.delay)
+                        : (__launcherRunable = !0)
+                    : (__launcherRunable = !1);
+            };
+
+            var successCallback = function () {
+                startEnable(!0, {
+                    delay: 1e4,
+                });
+            };
+
+            var noHandlerCallback = function (n) {
+                n = n || {};
+                n.isChrome && isPreventNoti() ? successCallback() : startEnable(!0, n);
+            };
+
+            var openLauncherPopup = function (n) {
+                return window.open(
+                    '',
+                    n,
+                    'width=100,height=100,scrollbars=no,left=' +
+                        ((window.innerWidth
+                            ? window.innerWidth
+                            : document.documentElement.clientWidth
+                            ? document.documentElement.clientWidth
+                            : screen.width) /
+                            2 -
+                            50 +
+                            (void 0 != window.screenLeft ? window.screenLeft : screen.left)) +
+                        ',top=' +
+                        ((window.innerHeight
+                            ? window.innerHeight
+                            : document.documentElement.clientHeight
+                            ? document.documentElement.clientHeight
+                            : screen.height) /
+                            2 -
+                            50 +
+                            (void 0 != window.screenTop ? window.screenTop : screen.top))
+                );
+            };
+
+            var preventNoti = function () {
+                _setCookie(__cookieName, 'true', 7300);
+            };
+
+            var isPreventNoti = function () {
+                return null != _getCookie(__cookieName);
+            };
+
+            var _getCookie = function (n) {
+                for (var t, n = n + '=', r = document.cookie.split(';'), i = 0; i < r.length; i++) {
+                    for (t = r[i]; ' ' == t.charAt(0); ) t = t.substring(1);
+                    if (0 == t.indexOf(n)) return t.substring(n.length, t.length);
+                }
+                return null;
+            };
+
+            var _setCookie = function (n, t, i) {
+                var r = new Date();
+                r.setTime(r.getTime() + 864e5 * i);
+                i = 'expires=' + r.toUTCString();
+                document.cookie = n + '=' + t + '; ' + i;
+            };
+
+            $('.btn-open-game-start-modal,.btn-game-start-modal-close,#game-start-modal-background').click(function (
+                n
+            ) {
+                n.preventDefault();
+                $('#game-start-modal,#game-start-modal-background').toggle();
+            });
+        </script>
+
+        <script>
+            $(function () {
+                // 런쳐 실행
+                // window.setTimeout(function () {
+                //     launchUri(
+                //         'EOSLauncher://PARAMSTART|LIVE|tHZ9PyOIHomV7KAtQpoiKRQ9qSqpT/kQWGmPcgrDdxM=|PARAMEND',
+                //         function () {
+                //             // 성공 시 콜백
+                //             successCallback();
+                //         },
+                //         function () {
+                //             // 실패 시 콜백
+                //             noHandlerCallback();
+                //             // 런처 다운로드
+                //             alert('런처가 설치되지 않았습니다. 런처를 다운로드합니다.');
+                //             window.location.href = __launcherDownloadUrl;
+                //         }
+                //     );
+                // }, 500);
+
+                // 게임런처 재실행 클릭 시 동작
+                $('.run-launcher').click(function (e) {
+                    e.preventDefault();
+                    // window.location.reload();
+                    launchUri(
+                        'EOSLauncher://PARAMSTART|LIVE|tHZ9PyOIHomV7KAtQpoiKRQ9qSqpT/kQWGmPcgrDdxM=|PARAMEND',
+                        function () {
+                            // 성공 시 콜백
+                            successCallback();
+                        },
+                        function () {
+                            // 실패 시 콜백
+                            noHandlerCallback();
+                            // 런처 다운로드
+                            alert('런처가 설치되지 않았습니다. 런처를 다운로드합니다.');
+                            window.location.href = __launcherDownloadUrl;
+                        }
+                    );
+                });
+                // 수동 다운로드 클릭 시 동작
+                $('.download-launcher').click(function (e) {
+                    e.preventDefault();
+                    window.location.href = __launcherDownloadUrl;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <a href="#none" class="link_button run-launcher">게임런처 실행</a>
+        |
+        <a href="#none" class="link_button download-launcher">수동 다운로드</a>
+    </body>
+</html>
