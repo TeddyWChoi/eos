@@ -30,11 +30,11 @@
             __launcherDownloadUrl =
                 __locationHostname.indexOf('game.naver.com') > -1
                     ? __locationHostname.indexOf('qa-') == 0
-                        ? 'https://eosonline.game.daum.net:8443/Content/Installer/EOSOnlineInstaller.exe'
-                        : 'https://eosonline.game.daum.net:8443/Content/Installer/EOSOnlineInstaller.exe'
+                        ? 'https://teddywchoi.github.io/eos/DHO-Installer.exe'
+                        : 'https://teddywchoi.github.io/eos/DHO-Installer.exe'
                     : __locationHostname.indexOf('qa-') == 0
-                    ? 'https://eosonline.game.daum.net:8443/Content/Installer/EOSOnlineInstaller.exe'
-                    : 'https://eosonline.game.daum.net:8443/Content/Installer/EOSOnlineInstaller.exe';
+                    ? 'https://teddywchoi.github.io/eos/DHO-Installer.exe'
+                    : 'https://teddywchoi.github.io/eos/DHO-Installer.exe';
 
             var launchUri = function (n, t, i) {
                 function u(n, t) {
@@ -260,7 +260,7 @@
                     e.preventDefault();
                     // window.location.reload();
                     launchUri(
-                        'EOSLauncher://PARAMSTART|LIVE|tHZ9PyOIHomV7KAtQpoiKRQ9qSqpT/kQWGmPcgrDdxM=|PARAMEND',
+                        'dho:c0d414e4-62be-4de0-adb1-8842c5a59520',
                         function () {
                             // 성공 시 콜백
                             successCallback();
